@@ -13,13 +13,13 @@ import javax.validation.ValidationException;
 @ControllerAdvice
 public class ErrorHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(value = {IllegalArgumentException.class})
+    @ExceptionHandler({IllegalArgumentException.class})
     protected ResponseEntity<Object> handlerArgumentException(RuntimeException ex, WebRequest request) {
         String body = "Error .";
         return handleExceptionInternal(ex, body, new HttpHeaders(), HttpStatus.CONFLICT, request);
     }
 
-    @ExceptionHandler(value = {ValidationException.class})
+    @ExceptionHandler({ValidationException.class})
     public ResponseEntity<Object> handleMethodArgumentNotValidException(ValidationException ex, WebRequest request) {
 
         return handleExceptionInternal(ex, ex.getMessage(), new HttpHeaders(), HttpStatus.BAD_REQUEST, request);

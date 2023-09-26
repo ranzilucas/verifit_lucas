@@ -20,8 +20,9 @@ Your code should be committed to a GIT repository.
 
 
 ### Guides
+There are 5 member in the system, with id 1 to 5 you can test using the swagger ui.
 
-Please follow the comands to run the app:
+Please follow the commands to run the app:
 
 ```shell
 mvn clean package
